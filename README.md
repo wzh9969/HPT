@@ -7,6 +7,10 @@
 * torch >= 1.6.0
 * transformers >= 4.11.0
 * datasets
+* torch-geometric == 1.7.2
+* torch-scatter == 2.0.8
+* torch-sparse == 0.6.12
+
 
 ## Preprocess
 
@@ -78,6 +82,8 @@ We experiment on one GeForce RTX 3090 GPU (24G) with CUDA version $11.2$. We use
 The model is trained for around 20 epochs before early stop with ~10 min/epoch.
 
 Our model has no extra hyperparameters: all hyperparameters follow previous works and have not been tuned.
+
+We use `torch == 1.8.0`, `transformers == 4.18.0`.
 
 ## Test
 
