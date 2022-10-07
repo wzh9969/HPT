@@ -32,10 +32,12 @@ python data_wos.py
 ### NYT
 
 The original dataset can be acquired [here](https://catalog.ldc.upenn.edu/LDC2008T19).
-Place the **unzipped** folder `nyt_corpus` inside `data/nyt`.
+Place the **unzipped** folder `nyt_corpus` inside `data/nyt` (or unzip `nyt_corpus_LDC2008T19.tgz` inside `data/nyt`).
 
 ```shell
 cd data/nyt
+# unzip if necessary
+# tar -zxvf nyt_corpus_LDC2008T19.tgz -C ./
 python data_nyt.py
 ```
 
@@ -85,7 +87,7 @@ The model is trained for around 20 epochs before early stop with ~10 min/epoch.
 
 Our model has no extra hyperparameters: all hyperparameters follow previous works and have not been tuned.
 
-We use `torch == 1.8.0`, `transformers == 4.18.0`.
+Logs of reported results in Table 1 are available at [https://wandb.ai/xii/HPT/table](https://wandb.ai/xii/HPT/table).
 
 ## Test
 
@@ -106,7 +108,7 @@ Use `--extra _macro` or `--extra _micro`  to choose from using `checkpoint_best_
 e.g. Test on previous example.
 
 ```shell
-python test.py --name WebOfScience-test
+python test.py --name WebOfScience-test --batch 64
 ```
 
 # Citation

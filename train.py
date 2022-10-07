@@ -55,7 +55,7 @@ if __name__ == '__main__':
     parser = parse()
     args = parser.parse_args()
     if args.wandb:
-        wandb.init(config=args, project='prompt-htc')
+        wandb.init(config=args, project='HPT')
     print(args)
     utils.seed_torch(args.seed)
 
@@ -275,4 +275,4 @@ if __name__ == '__main__':
 
 
     test_function('_macro')
-    test_function('_micro')
+    # test_function('_micro')
