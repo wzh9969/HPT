@@ -112,10 +112,11 @@ python test.py --name WebOfScience-test
 # Citation
 Only arxiv version is available right now. The published version will soon be available.
 ```
-@article{wang2022hpt,
+@inproceedings{wang2022hpt,
   title={HPT: Hierarchy-aware Prompt Tuning for Hierarchical Text Classification},
-  author={Wang, Zihan and Wang, Peiyi and Liu, Tianyu and Cao, Yunbo and Sui, Zhifang and Wang, Houfeng},
-  journal={arXiv preprint arXiv:2204.13413},
-  year={2022}
+  author={Wang, Zihan and Wang, Peiyi and Liu, Tianyu and Lin, Binghuai and Cao, Yunbo and Sui, Zhifang and Wang, Houfeng},
+  booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    year = "2022",
+    publisher = "Association for Computational Linguistics",
 }
 ```
