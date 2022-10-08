@@ -87,8 +87,6 @@ The model is trained for around 20 epochs before early stop with ~10 min/epoch.
 
 Our model has no extra hyperparameters: all hyperparameters follow previous works and have not been tuned.
 
-Logs of reported results in Table 1 are available at [https://wandb.ai/xii/HPT/table](https://wandb.ai/xii/HPT/table).
-
 ## Test
 
 ```
