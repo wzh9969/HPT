@@ -1,6 +1,6 @@
 # Implement of HPT: Hierarchy-aware Prompt Tuning for Hierarchical Text Classification
 This repository implements a prompt tuning model for hierarchical text classification. 
-This work has been accepted as the long paper "HPT: Hierarchy-aware Prompt Tuning for Hierarchical Text Classification"
+This work has been accepted as the long paper [HPT: Hierarchy-aware Prompt Tuning for Hierarchical Text Classification](https://arxiv.org/pdf/2204.13413.pdf)
 in EMNLP 2022.
 
 ## Requirements
@@ -18,9 +18,9 @@ in EMNLP 2022.
 
 Please download the original dataset and then use these scripts.
 
-### WebOfScience
+### Web Of Science
 
-The original dataset can be acquired in [the repository of HDLTex](https://github.com/kk7nc/HDLTex). Preprocess code could refer to [the repository of HiAGM](https://github.com/Alibaba-NLP/HiAGM) and we provide a copy of preprocess code here.
+The original dataset can be acquired in [the repository of HDLTex](https://github.com/kk7nc/HDLTex). Preprocessing code could refer to [the repository of HiAGM](https://github.com/Alibaba-NLP/HiAGM) and we provide a copy of preprocessing code here.
 Please save the Excel data file `Data.xlsx` in `WebOfScience/Meta-data` as `Data.txt`.
 
 ```shell
@@ -60,13 +60,13 @@ usage: train.py [-h] [--lr LR] [--data DATA] [--batch BATCH] [--early-stop EARLY
 
 optional arguments:
   -h, --help                show this help message and exit
-  --lr LR
+  --lr LR					Learning rate. Default: 3e-5.
   --data {WebOfScience,nyt,rcv1} Dataset.
-  --batch BATCH             Batch size
+  --batch BATCH             Batch size.
   --early-stop EARLY_STOP   Epoch before early stop.
-  --device DEVICE           cuda or cpu. Default: cuda
+  --device DEVICE           cuda or cpu. Default: cuda.
   --name NAME               A name for different runs.
-  --update UPDATE           Gradient accumulate steps
+  --update UPDATE           Gradient accumulate steps.
   --wandb                   Use wandb for logging.
   --seed SEED               Random seed.
 ```
@@ -83,9 +83,17 @@ python train.py --name test --batch 16 --data WebOfScience
 
 We experiment on one GeForce RTX 3090 GPU (24G) with CUDA version $11.2$. We use a batch size of $16$ to fully tap one GPU.
 
-The model is trained for around 20 epochs before early stop with ~10 min/epoch.
+The model is trained for around 20 epochs before an early stop with ~10 min/epoch.
 
 Our model has no extra hyperparameters: all hyperparameters follow previous works and have not been tuned.
+
+Checkpoints for each dataset can be downloaded [here](https://drive.google.com/drive/folders/1j1PMzo4YLG8oUAnuolvmfn-dA9A43yIS?usp=sharing). Place the `checkpoints` folder inside the main folder (`HPT/checkpoints`). These results are reported in the main experiment.
+
+| Dataset        | Macro-F1           | Micro-F1           |
+| -------------- | ------------------ | ------------------ |
+| NYT            | 0.7041934624814794 | 0.8041512855978236 |
+| RCV1-V2        | 0.6953327068021089 | 0.8726110320904367 |
+| Web Of Science | 0.8192644031945633 | 0.8715855067014047 |
 
 ## Test
 
@@ -109,8 +117,17 @@ e.g. Test on previous example.
 python test.py --name WebOfScience-test --batch 64
 ```
 
+Test on provided checkpoints:
+
+```shell
+python test.py --name WebOfScience-HPT --batch 64
+python test.py --name rcv1-HPT --batch 64
+python test.py --name nyt-HPT --batch 64
+```
+
 # Citation
-Only arxiv version is available right now. The published version will soon be available.
+
+Only [arxiv version](https://arxiv.org/pdf/2204.13413.pdf) is available right now. The published version will soon be available.
 ```
 @inproceedings{wang2022hpt,
   title={HPT: Hierarchy-aware Prompt Tuning for Hierarchical Text Classification},
