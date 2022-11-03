@@ -47,7 +47,7 @@ The preprocessing code could refer to the [repository of reuters_loader](https:/
 Place `rcv1.tar.xz` and `lyrl2004_tokens_train.dat` (can be downloaded [here](https://jmlr.csail.mit.edu/papers/volume5/lewis04a/a13-vector-files/lyrl2004_vectors_train.dat.gz)) inside `data/rcv1`.
 
 ```shell
-cd data/ecv1
+cd data/rcv1
 python preprocess_rcv1.py ./
 python data_rcv1.py
 ```
