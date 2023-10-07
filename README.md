@@ -127,13 +127,24 @@ python test.py --name nyt-HPT --batch 64
 
 # Citation
 
-Only [arxiv version](https://arxiv.org/pdf/2204.13413.pdf) is available right now. The published version will soon be available.
 ```
-@inproceedings{wang2022hpt,
-  title={HPT: Hierarchy-aware Prompt Tuning for Hierarchical Text Classification},
-  author={Wang, Zihan and Wang, Peiyi and Liu, Tianyu and Lin, Binghuai and Cao, Yunbo and Sui, Zhifang and Wang, Houfeng},
-  booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+@inproceedings{wang-etal-2022-hpt,
+    title = "{HPT}: Hierarchy-aware Prompt Tuning for Hierarchical Text Classification",
+    author = "Wang, Zihan  and
+      Wang, Peiyi  and
+      Liu, Tianyu  and
+      Lin, Binghuai  and
+      Cao, Yunbo  and
+      Sui, Zhifang  and
+      Wang, Houfeng",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
     year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
     publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.246",
+    doi = "10.18653/v1/2022.emnlp-main.246",
+    pages = "3740--3751",
 }
+
 ```
